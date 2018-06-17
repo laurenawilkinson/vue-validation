@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <title>Vue.js form validation</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/animate.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </head>
+    <body>
+        <div id="app">
+            <div class="form">
+                <form>
+                    <h1>Sign up</h1>
+                    <div class="grid">
+                        <div class="item-name">
+                            <input v-model="name" v-on:keyup="nameValidation()" type="text" placeholder="Name" v-bind:class="nameClass" maxlength="16" autofocus>
+                        </div>
+                        <small id="name-label">You have {{ remainingChars }} characters left</small>
+                        <div class="item-email">
+                            <input v-model="email" type="email" placeholder="Email" class="text-input" maxlength="254">
+                        </div>
+                        <small id="email-label">{{ emailValidation }}</small>
+                        <div class="item-password">
+                            <input v-model="password" v-on:keyup.space="removeSpace()" type="password" pattern="^\S+$" placeholder="Password" class="text-input" maxlength="20">
+                        </div>
+                        <small id="password-label">{{ passwordValidation }}</small>
+                        <div class="item-radios">
+                            <div class="md-radio">
+                                <input type="radio" id="male" value="male" v-model="gender">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="md-radio">
+                                <input type="radio" id="female" value="female" v-model="gender">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="md-radio">
+                                 <input type="radio" id="other" value="other" v-model="gender">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                        <small id="gender-label">{{ genderValidation }}</small>
+                        <h3 id="interests-header">What should we message you about?</h3>
+                            <div class="item-interests">
+                                <div class="md-checkbox">
+                                    <input type="checkbox" id="gaming" value="gaming" v-model="interests">
+                                    <label for="gaming">Gaming</label>
+                                </div>
+                                <div class="md-checkbox">
+                                    <input type="checkbox" id="movies" value="movies" v-model="interests">
+                                    <label for="movies">Movies</label>
+                                </div>
+                                <div class="md-checkbox">
+                                    <input type="checkbox" id="animals" value="animals" v-model="interests">
+                                    <label for="animals">Animals</label>
+                                </div>
+                            </div>
+                            <small id="interests-label">{{ interestsValidation }}</small>
+                        <button type="button" class="button">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="scripts/vue.js"></script>
+        <script src="scripts/app.js"></script>
+    </body>
+</html>
