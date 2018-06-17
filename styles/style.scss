@@ -192,7 +192,7 @@ small{
 }
 
 .md-radio {
-    margin: 16px 0;
+    margin: 10px 0;
     width: 30%;
     display: inline-block;
 
@@ -321,8 +321,10 @@ small{
         display: block;
         height: auto;
         
-        .button{
+        .button, .md-radio{
             display: block;
+            text-align: center;
+            margin: 10px auto;
         }
     }
 }

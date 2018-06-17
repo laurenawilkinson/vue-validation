@@ -136,7 +136,7 @@ small {
     opacity: 0;
     right: 15px; } }
 .md-radio {
-  margin: 16px 0;
+  margin: 10px 0;
   width: 30%;
   display: inline-block; }
   .md-radio input[type="radio"] {
@@ -223,7 +223,9 @@ small {
   .grid {
     display: block;
     height: auto; }
-    .grid .button {
-      display: block; } }
+    .grid .button, .grid .md-radio {
+      display: block;
+      text-align: center;
+      margin: 10px auto; } }
 
 /*# sourceMappingURL=style.css.map */
