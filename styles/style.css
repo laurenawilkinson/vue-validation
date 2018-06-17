@@ -219,7 +219,10 @@ small {
 .shake {
   background: #e83a3a !important; }
 
-@media (max-width: 1034px) {
+@media (max-width: 1156px) {
+  .form {
+    width: 70%; }
+
   .grid {
     display: block;
     height: auto; }
@@ -227,5 +230,8 @@ small {
       display: block;
       text-align: center;
       margin: 10px auto; } }
+@media (max-width: 600px) {
+  .form {
+    width: 90%; } }
 
 /*# sourceMappingURL=style.css.map */
